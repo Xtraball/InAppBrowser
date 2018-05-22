@@ -15,7 +15,8 @@
       "wp8",
       "windows8",
       "windows",
-      "firefoxos"
+      "firefoxos",
+      "browser"
     ]
   },
   "repository": {
