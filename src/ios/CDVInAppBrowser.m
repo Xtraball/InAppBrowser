@@ -31,7 +31,7 @@
 - (void)pluginInitialize
 {
     // default values
-    self.usewkwebview = NO;
+    self.usewkwebview = YES;
 
 #if __has_include("CDVWKWebViewEngine.h")
     self.wkwebviewavailable = YES;
@@ -48,7 +48,7 @@
         [self.commandDelegate sendPluginResult:[CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsDictionary:@{@"type":@"loaderror", @"message": @"usewkwebview option specified but but no plugin that supplies a WKWebView engine is present"}] callbackId:command.callbackId];
         return;
     }
-    self.usewkwebview = browserOptions.usewkwebview;
+    self.usewkwebview = YES;
     if(self.usewkwebview){
         [[CDVWKInAppBrowser getInstance] open:command];
     }else{
